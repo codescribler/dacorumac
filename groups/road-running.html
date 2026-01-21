@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Dacorum AC's Road Running group. From Couch to 5K to marathon training, all abilities welcome.">
+  <title>Road Running | Dacorum Athletics Club</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#9661ab',
+            'primary-dark': '#7d4e91',
+            'primary-light': '#b585c7',
+            secondary: '#F59E0B',
+            accent: '#10B981',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="icon" type="image/png" href="../images/Logo-Purple-1024x978.png">
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="flex items-center space-x-3">
+          <img src="../images/Logo-Purple-1024x978.png" alt="Dacorum AC Logo" class="h-14 w-auto">
+          <div class="hidden sm:block">
+            <h1 class="text-xl font-bold text-gray-900">Dacorum AC</h1>
+            <p class="text-xs text-gray-500">Athletics Club</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a href="../index.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Home</a>
+          <a href="../about.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">About</a>
+          <div class="relative dropdown">
+            <button class="px-4 py-2 text-sm font-medium text-violet-600 flex items-center">
+              Groups
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 mt-1">
+              <a href="track-field.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Track & Field</a>
+              <a href="road-running.html" class="block px-4 py-2 text-sm text-emerald-600 bg-emerald-50 font-medium">Road Running</a>
+              <a href="cross-country.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Cross Country</a>
+            </div>
+          </div>
+          <a href="../records.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Records</a>
+          <a href="../events.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Events</a>
+          <a href="../coaches.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Coaches</a>
+          <a href="../kit.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Kit</a>
+          <a href="../contact.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <a href="../membership.html" class="hidden sm:inline-flex items-center px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-violet-500/25">
+            Join Now
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden overflow-y-auto">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center space-x-3">
+          <img src="../images/Logo-Purple-1024x978.png" alt="Dacorum AC" class="h-10 w-auto">
+          <span class="font-bold text-gray-900">Menu</span>
+        </div>
+        <button id="mobile-menu-close" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="space-y-1">
+        <a href="../index.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Home</a>
+        <a href="../about.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">About Us</a>
+        <div>
+          <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-emerald-600 bg-emerald-50 rounded-lg font-medium">
+            Groups
+            <svg class="dropdown-icon w-5 h-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="pl-4 space-y-1 mt-1">
+            <a href="track-field.html" class="block px-4 py-2 text-sm text-gray-600 hover:text-violet-600">Track & Field</a>
+            <a href="road-running.html" class="block px-4 py-2 text-sm text-emerald-600 font-medium">Road Running</a>
+            <a href="cross-country.html" class="block px-4 py-2 text-sm text-gray-600 hover:text-violet-600">Cross Country</a>
+          </div>
+        </div>
+        <a href="../records.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Club Records</a>
+        <a href="../events.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Events</a>
+        <a href="../coaches.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Coaches</a>
+        <a href="../kit.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Club Kit</a>
+        <a href="../contact.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Contact</a>
+      </nav>
+      <div class="mt-8 pt-8 border-t">
+        <a href="../membership.html" class="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-white text-center font-semibold rounded-full transition-colors">
+          Join the Club
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-700 relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center">
+        <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur rounded-full text-white/90 text-sm font-medium mb-6">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+          </svg>
+          All Abilities Welcome
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Road Running</h1>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">From your first 5K to marathon glory. Join our friendly running community for social runs and structured training.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-50 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="../index.html" class="text-gray-500 hover:text-violet-600">Home</a></li>
+        <li><span class="text-gray-400">/</span></li>
+        <li><span class="text-gray-500">Groups</span></li>
+        <li><span class="text-gray-400">/</span></li>
+        <li><span class="text-gray-900 font-medium">Road Running</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Overview -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-animate>
+          <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Overview</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Run With Friends</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Our road running group is all about community and encouragement. Whether you're taking your first steps into running or training for your tenth marathon, you'll find supportive training partners here.
+          </p>
+          <p class="text-gray-600 mb-6">
+            We offer group runs at various paces, structured training sessions, and the opportunity to compete in local races wearing the club vest. Running is always better with friends!
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">Social Runs</span>
+            <span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">5K to Marathon</span>
+            <span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">All Paces</span>
+            <span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">Parkrun</span>
+          </div>
+        </div>
+
+        <div class="aspect-video rounded-2xl overflow-hidden" data-animate>
+          <img src="../images/seniormens.JPEG" alt="Road running group at Dacorum AC" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Programs</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Find Your Pace</h2>
+        <p class="text-lg text-gray-600">Whatever your running goals, we have a program to help you achieve them.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Couch to 5K -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-animate>
+          <div class="h-40 bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
+            <span class="text-6xl font-extrabold text-white/30">C25K</span>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded mb-3">Beginner</span>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Couch to 5K</h3>
+            <p class="text-gray-600 mb-4">New to running? Our beginner-friendly program will take you from zero to 5K in just 9 weeks with walk/run intervals.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>9-week structured program</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>Supportive group environment</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>Graduate to parkrun!</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Social Running -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-animate>
+          <div class="h-40 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-2 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded mb-3">All Levels</span>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Social Runs</h3>
+            <p class="text-gray-600 mb-4">Weekly group runs at various paces. No one gets left behind - we run together and return together.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Multiple pace groups</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Scenic local routes</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Post-run socials</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Race Training -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-animate>
+          <div class="h-40 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded mb-3">Competitive</span>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Race Training</h3>
+            <p class="text-gray-600 mb-4">Structured training for those targeting specific race goals, from PB-chasing to marathon completion.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>Interval sessions</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>Long run groups</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>Race day support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Schedule -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Training</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Weekly Sessions</h2>
+        <p class="text-lg text-gray-600">Regular opportunities to run with the club.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="flex items-center mb-4">
+            <div class="w-14 h-14 bg-emerald-100 rounded-xl flex flex-col items-center justify-center mr-4">
+              <span class="text-emerald-600 font-bold text-sm">TUE</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Evening Run</h3>
+              <p class="text-gray-500 text-sm">18:30 - 20:00</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm">Mixed ability group run. Multiple pace groups with routes from 5K to 10K.</p>
+          <div class="mt-4 flex items-center text-xs text-gray-500">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            </svg>
+            Jarman Park Car Park
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="flex items-center mb-4">
+            <div class="w-14 h-14 bg-cyan-100 rounded-xl flex flex-col items-center justify-center mr-4">
+              <span class="text-cyan-600 font-bold text-sm">THU</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Track Session</h3>
+              <p class="text-gray-500 text-sm">18:30 - 20:00</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm">Structured interval training on the track. Improve your speed and race fitness.</p>
+          <div class="mt-4 flex items-center text-xs text-gray-500">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            </svg>
+            Jarman Park Track
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="flex items-center mb-4">
+            <div class="w-14 h-14 bg-amber-100 rounded-xl flex flex-col items-center justify-center mr-4">
+              <span class="text-amber-600 font-bold text-sm">SUN</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Long Run</h3>
+              <p class="text-gray-500 text-sm">09:00 start</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm">Sunday morning long run for those training for half marathons and marathons.</p>
+          <div class="mt-4 flex items-center text-xs text-gray-500">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            </svg>
+            Various locations
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center" data-animate>
+        <h3 class="text-xl font-bold text-emerald-800 mb-2">Parkrun Partnership</h3>
+        <p class="text-emerald-700 mb-4">Many of our members are regular parkrunners. Join us every Saturday at 9am at local parkruns including Gadebridge Park and Tring!</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="px-4 py-2 bg-white text-emerald-700 rounded-full text-sm font-medium shadow-sm">Gadebridge Park</span>
+          <span class="px-4 py-2 bg-white text-emerald-700 rounded-full text-sm font-medium shadow-sm">Tring</span>
+          <span class="px-4 py-2 bg-white text-emerald-700 rounded-full text-sm font-medium shadow-sm">Rickmansworth</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Races -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-amber-100 text-amber-700 text-sm font-semibold rounded-full mb-4">Races</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Popular Local Races</h2>
+        <p class="text-lg text-gray-600">Our members regularly take part in these fantastic local events.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover" data-animate>
+          <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-emerald-600 font-bold">5K</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Gadebridge 5K</h3>
+          <p class="text-sm text-gray-500">Spring & Autumn</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover" data-animate>
+          <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-cyan-600 font-bold">10K</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Hemel 10K</h3>
+          <p class="text-sm text-gray-500">Summer</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover" data-animate>
+          <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-amber-600 font-bold text-xs">Half</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">St Albans Half</h3>
+          <p class="text-sm text-gray-500">June</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover" data-animate>
+          <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-violet-600 font-bold text-xs">26.2</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">London Marathon</h3>
+          <p class="text-sm text-gray-500">April</p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center" data-animate>
+        <p class="text-gray-600 mb-4">Wearing your Dacorum AC vest? You're representing the club and we love to celebrate your achievements!</p>
+        <a href="../records.html" class="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700">
+          View Road Running Records
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-700 relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative" data-animate>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Ready to Run With Us?</h2>
+      <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+        Join our friendly road running community. All abilities welcome - from first-timers to marathon veterans.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="../membership.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-full hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+          Join Dacorum AC
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="../contact.html" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center space-x-3 mb-6">
+            <img src="../images/Logo-Purple-1024x978.png" alt="Dacorum AC" class="h-12 w-auto">
+            <div>
+              <h3 class="text-lg font-bold">Dacorum AC</h3>
+              <p class="text-xs text-gray-400">Athletics Club</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm">From social runner to international athlete. Serving Hemel Hempstead since 1995.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="../about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="../membership.html" class="text-gray-400 hover:text-white transition-colors">Membership</a></li>
+            <li><a href="../coaches.html" class="text-gray-400 hover:text-white transition-colors">Our Coaches</a></li>
+            <li><a href="../records.html" class="text-gray-400 hover:text-white transition-colors">Club Records</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Programs</h4>
+          <ul class="space-y-3">
+            <li><a href="track-field.html" class="text-gray-400 hover:text-white transition-colors">Track & Field</a></li>
+            <li><a href="road-running.html" class="text-gray-400 hover:text-white transition-colors">Road Running</a></li>
+            <li><a href="cross-country.html" class="text-gray-400 hover:text-white transition-colors">Cross Country</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Contact</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="mailto:hello@dacorumac.org.uk" class="hover:text-white transition-colors">hello@dacorumac.org.uk</a></li>
+            <li>Jarman Park Athletics Track<br>Hemel Hempstead, HP2</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+        <p>&copy; 2026 Dacorum Athletics Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

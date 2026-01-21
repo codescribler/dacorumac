@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Dacorum AC's Track & Field program. Training for sprints, hurdles, jumps, throws, and middle distance for ages U11 to Masters.">
+  <title>Track & Field | Dacorum Athletics Club</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#9661ab',
+            'primary-dark': '#7d4e91',
+            'primary-light': '#b585c7',
+            secondary: '#F59E0B',
+            accent: '#10B981',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="icon" type="image/png" href="../images/Logo-Purple-1024x978.png">
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="flex items-center space-x-3">
+          <img src="../images/Logo-Purple-1024x978.png" alt="Dacorum AC Logo" class="h-14 w-auto">
+          <div class="hidden sm:block">
+            <h1 class="text-xl font-bold text-gray-900">Dacorum AC</h1>
+            <p class="text-xs text-gray-500">Athletics Club</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a href="../index.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Home</a>
+          <a href="../about.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">About</a>
+          <div class="relative dropdown">
+            <button class="px-4 py-2 text-sm font-medium text-violet-600 flex items-center">
+              Groups
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 mt-1">
+              <a href="track-field.html" class="block px-4 py-2 text-sm text-violet-600 bg-violet-50 font-medium">Track & Field</a>
+              <a href="road-running.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Road Running</a>
+              <a href="cross-country.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Cross Country</a>
+            </div>
+          </div>
+          <a href="../records.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Records</a>
+          <a href="../events.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Events</a>
+          <a href="../coaches.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Coaches</a>
+          <a href="../kit.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Kit</a>
+          <a href="../contact.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <a href="../membership.html" class="hidden sm:inline-flex items-center px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-violet-500/25">
+            Join Now
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden overflow-y-auto">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center space-x-3">
+          <img src="../images/Logo-Purple-1024x978.png" alt="Dacorum AC" class="h-10 w-auto">
+          <span class="font-bold text-gray-900">Menu</span>
+        </div>
+        <button id="mobile-menu-close" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="space-y-1">
+        <a href="../index.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Home</a>
+        <a href="../about.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">About Us</a>
+        <div>
+          <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-violet-600 bg-violet-50 rounded-lg font-medium">
+            Groups
+            <svg class="dropdown-icon w-5 h-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="pl-4 space-y-1 mt-1">
+            <a href="track-field.html" class="block px-4 py-2 text-sm text-violet-600 font-medium">Track & Field</a>
+            <a href="road-running.html" class="block px-4 py-2 text-sm text-gray-600 hover:text-violet-600">Road Running</a>
+            <a href="cross-country.html" class="block px-4 py-2 text-sm text-gray-600 hover:text-violet-600">Cross Country</a>
+          </div>
+        </div>
+        <a href="../records.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Club Records</a>
+        <a href="../events.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Events</a>
+        <a href="../coaches.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Coaches</a>
+        <a href="../kit.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Club Kit</a>
+        <a href="../contact.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Contact</a>
+      </nav>
+      <div class="mt-8 pt-8 border-t">
+        <a href="../membership.html" class="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-white text-center font-semibold rounded-full transition-colors">
+          Join the Club
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-br from-violet-600 via-indigo-600 to-purple-700 relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center">
+        <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur rounded-full text-white/90 text-sm font-medium mb-6">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          Ages U11 - Masters
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Track & Field</h1>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">Sprints, hurdles, jumps, throws, and middle distance. Train with expert coaches and compete at the highest levels.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-50 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="../index.html" class="text-gray-500 hover:text-violet-600">Home</a></li>
+        <li><span class="text-gray-400">/</span></li>
+        <li><span class="text-gray-500">Groups</span></li>
+        <li><span class="text-gray-400">/</span></li>
+        <li><span class="text-gray-900 font-medium">Track & Field</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Overview -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-animate>
+          <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Overview</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Excel in Every Event</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Our Track & Field program is the heart of Dacorum AC. With over 300 members and 31 qualified coaches, we offer comprehensive training across all athletics disciplines.
+          </p>
+          <p class="text-gray-600 mb-6">
+            From your first steps on the track to competing at national and international level, we provide the coaching, facilities, and competitive opportunities to help you achieve your goals.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-violet-50 rounded-xl p-4">
+              <div class="text-3xl font-bold text-violet-600 mb-1">3rd</div>
+              <p class="text-sm text-gray-600">YDL National Finals</p>
+            </div>
+            <div class="bg-amber-50 rounded-xl p-4">
+              <div class="text-3xl font-bold text-amber-600 mb-1">4th</div>
+              <p class="text-sm text-gray-600">EYAL National Finals</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aspect-video rounded-2xl overflow-hidden" data-animate>
+          <img src="../images/trackracing.JPEG" alt="Track racing at Dacorum AC" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disciplines -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Disciplines</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Find Your Event</h2>
+        <p class="text-lg text-gray-600">We offer coaching across all track and field disciplines.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Sprints -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Sprints</h3>
+          <p class="text-sm text-gray-600 mb-3">60m, 100m, 200m, 400m</p>
+          <p class="text-xs text-gray-500">Explosive speed training with technique focus</p>
+        </div>
+
+        <!-- Hurdles -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Hurdles</h3>
+          <p class="text-sm text-gray-600 mb-3">60mH, 80mH, 100mH, 110mH, 300mH, 400mH</p>
+          <p class="text-xs text-gray-500">Technical hurdle clearance and rhythm</p>
+        </div>
+
+        <!-- Middle Distance -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Middle Distance</h3>
+          <p class="text-sm text-gray-600 mb-3">800m, 1500m, 3000m, Steeplechase</p>
+          <p class="text-xs text-gray-500">Endurance, speed and race tactics</p>
+        </div>
+
+        <!-- Long Jump -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Horizontal Jumps</h3>
+          <p class="text-sm text-gray-600 mb-3">Long Jump, Triple Jump</p>
+          <p class="text-xs text-gray-500">Approach speed and flight technique</p>
+        </div>
+
+        <!-- High Jump -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">High Jump</h3>
+          <p class="text-sm text-gray-600 mb-3">Fosbury Flop technique</p>
+          <p class="text-xs text-gray-500">Approach, takeoff and bar clearance</p>
+        </div>
+
+        <!-- Pole Vault -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Pole Vault</h3>
+          <p class="text-sm text-gray-600 mb-3">Technical vaulting</p>
+          <p class="text-xs text-gray-500">Specialist coaching with Andy Jackson</p>
+        </div>
+
+        <!-- Throws -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Throws</h3>
+          <p class="text-sm text-gray-600 mb-3">Shot Put, Discus, Javelin, Hammer</p>
+          <p class="text-xs text-gray-500">Power, technique and rotation</p>
+        </div>
+
+        <!-- Multi-Events -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 card-hover" data-animate>
+          <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Multi-Events</h3>
+          <p class="text-sm text-gray-600 mb-3">Pentathlon, Heptathlon, Decathlon</p>
+          <p class="text-xs text-gray-500">All-round athletic development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Schedule -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Training</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Training Schedule</h2>
+        <p class="text-lg text-gray-600">Regular training sessions at Jarman Park Athletics Track.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden" data-animate>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-violet-600 text-white">
+              <tr>
+                <th class="px-6 py-4 text-left font-semibold">Day</th>
+                <th class="px-6 py-4 text-left font-semibold">Time</th>
+                <th class="px-6 py-4 text-left font-semibold">Age Group</th>
+                <th class="px-6 py-4 text-left font-semibold">Focus</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-medium text-gray-900">Tuesday</td>
+                <td class="px-6 py-4 text-gray-600">18:00 - 19:30</td>
+                <td class="px-6 py-4"><span class="px-2 py-1 bg-violet-100 text-violet-700 text-xs font-medium rounded">U11 - U13</span></td>
+                <td class="px-6 py-4 text-gray-600">Multi-skills & Introduction</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-medium text-gray-900">Tuesday</td>
+                <td class="px-6 py-4 text-gray-600">18:00 - 20:00</td>
+                <td class="px-6 py-4"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded">U15 - Senior</span></td>
+                <td class="px-6 py-4 text-gray-600">All Events</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-medium text-gray-900">Thursday</td>
+                <td class="px-6 py-4 text-gray-600">18:00 - 19:30</td>
+                <td class="px-6 py-4"><span class="px-2 py-1 bg-violet-100 text-violet-700 text-xs font-medium rounded">U11 - U13</span></td>
+                <td class="px-6 py-4 text-gray-600">Multi-skills & Introduction</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-medium text-gray-900">Thursday</td>
+                <td class="px-6 py-4 text-gray-600">18:00 - 20:00</td>
+                <td class="px-6 py-4"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded">U15 - Senior</span></td>
+                <td class="px-6 py-4 text-gray-600">All Events</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-medium text-gray-900">Saturday</td>
+                <td class="px-6 py-4 text-gray-600">09:00 - 11:00</td>
+                <td class="px-6 py-4"><span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded">All Ages</span></td>
+                <td class="px-6 py-4 text-gray-600">Competition Preparation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6" data-animate>
+        <div class="flex items-start">
+          <svg class="w-6 h-6 text-amber-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <h4 class="font-semibold text-amber-800 mb-1">High Performance Programme</h4>
+            <p class="text-amber-700 text-sm">Athletes U15+ showing exceptional potential may be invited to join our High Performance Programme with additional specialist coaching sessions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Age Groups -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Age Groups</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">A Place for Everyone</h2>
+        <p class="text-lg text-gray-600">We welcome athletes from Year 5 through to Masters (70+).</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 card-hover" data-animate>
+          <div class="w-14 h-14 bg-violet-100 rounded-xl flex items-center justify-center mb-6">
+            <span class="text-violet-600 font-bold text-xl">U11-13</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Junior Development</h3>
+          <p class="text-gray-600 mb-4">Fun, multi-skills introduction to athletics. Focus on developing fundamental movement skills across all events.</p>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2"></span>EYAL League competition</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2"></span>County championships</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2"></span>Sportshall athletics</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 card-hover" data-animate>
+          <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+            <span class="text-indigo-600 font-bold text-xl">U15-20</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Youth Development</h3>
+          <p class="text-gray-600 mb-4">Structured training with event specialisation. Competitive opportunities at regional and national level.</p>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>Youth Development League</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>English Schools</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>High Performance pathway</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 card-hover" data-animate>
+          <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+            <span class="text-amber-600 font-bold text-xl">Senior+</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Senior & Masters</h3>
+          <p class="text-gray-600 mb-4">Compete at any level from local to international. Masters categories from 35 to 80+.</p>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>Southern League</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>British Masters</li>
+            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>World Masters</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitions -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-amber-100 text-amber-700 text-sm font-semibold rounded-full mb-4">Competitions</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Where We Compete</h2>
+        <p class="text-lg text-gray-600">Regular competitive opportunities throughout the year.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl p-8 text-white" data-animate>
+          <h3 class="text-2xl font-bold mb-4">Youth Development League</h3>
+          <p class="text-white/80 mb-4">Our flagship competition for U17 and U20 athletes. We compete in the Midland Premier Division and have achieved multiple top-4 national final finishes.</p>
+          <div class="flex items-center mt-6">
+            <div class="bg-white/20 rounded-lg px-4 py-2">
+              <span class="text-2xl font-bold">3rd</span>
+              <span class="text-sm ml-1">National 2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-8 text-white" data-animate>
+          <h3 class="text-2xl font-bold mb-4">EYAL (U12/U15/U17)</h3>
+          <p class="text-white/80 mb-4">The England Athletics Youth League provides grassroots competition for our younger athletes, focusing on participation and development.</p>
+          <div class="flex items-center mt-6">
+            <div class="bg-white/20 rounded-lg px-4 py-2">
+              <span class="text-2xl font-bold">4th</span>
+              <span class="text-sm ml-1">National Finals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-animate>
+        <div class="bg-white rounded-xl shadow-md p-4 text-center">
+          <h4 class="font-semibold text-gray-900">County Championships</h4>
+          <p class="text-sm text-gray-500">Hertfordshire</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-4 text-center">
+          <h4 class="font-semibold text-gray-900">Regional Championships</h4>
+          <p class="text-sm text-gray-500">South of England</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-4 text-center">
+          <h4 class="font-semibold text-gray-900">English Schools</h4>
+          <p class="text-sm text-gray-500">Track & Field</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-4 text-center">
+          <h4 class="font-semibold text-gray-900">Open Meetings</h4>
+          <p class="text-sm text-gray-500">Throughout Season</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-br from-violet-600 via-indigo-600 to-purple-700 relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative" data-animate>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Ready to Hit the Track?</h2>
+      <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+        Join our Track & Field program and discover your potential. New members are always welcome.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="../membership.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-violet-700 font-bold rounded-full hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+          Join Dacorum AC
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="../contact.html" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center space-x-3 mb-6">
+            <img src="../images/Logo-Purple-1024x978.png" alt="Dacorum AC" class="h-12 w-auto">
+            <div>
+              <h3 class="text-lg font-bold">Dacorum AC</h3>
+              <p class="text-xs text-gray-400">Athletics Club</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm">From social runner to international athlete. Serving Hemel Hempstead since 1995.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="../about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="../membership.html" class="text-gray-400 hover:text-white transition-colors">Membership</a></li>
+            <li><a href="../coaches.html" class="text-gray-400 hover:text-white transition-colors">Our Coaches</a></li>
+            <li><a href="../records.html" class="text-gray-400 hover:text-white transition-colors">Club Records</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Programs</h4>
+          <ul class="space-y-3">
+            <li><a href="track-field.html" class="text-gray-400 hover:text-white transition-colors">Track & Field</a></li>
+            <li><a href="road-running.html" class="text-gray-400 hover:text-white transition-colors">Road Running</a></li>
+            <li><a href="cross-country.html" class="text-gray-400 hover:text-white transition-colors">Cross Country</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6">Contact</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="mailto:hello@dacorumac.org.uk" class="hover:text-white transition-colors">hello@dacorumac.org.uk</a></li>
+            <li>Jarman Park Athletics Track<br>Hemel Hempstead, HP2</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+        <p>&copy; 2026 Dacorum Athletics Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

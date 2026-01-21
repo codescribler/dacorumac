@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dacorum Athletics Club - From Social Runner to International Athlete. Join our friendly athletics club in Hemel Hempstead for track & field, road running, and cross country.">
+  <title>Dacorum Athletics Club | Track & Field, Road Running, Cross Country</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#9661ab',
+            'primary-dark': '#7d4e91',
+            'primary-light': '#b585c7',
+            secondary: '#F59E0B',
+            accent: '#10B981',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/Logo-Purple-1024x978.png">
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-3">
+          <img src="images/Logo-Purple-1024x978.png" alt="Dacorum AC Logo" class="h-14 w-auto">
+          <div class="hidden sm:block">
+            <h1 class="text-xl font-bold text-gray-900">Dacorum AC</h1>
+            <p class="text-xs text-gray-500">Athletics Club</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a href="index.html" class="px-4 py-2 text-sm font-medium text-violet-600 hover:text-violet-700">Home</a>
+          <a href="about.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">About</a>
+
+          <!-- Groups Dropdown -->
+          <div class="relative dropdown">
+            <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors flex items-center">
+              Groups
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 mt-1">
+              <a href="groups/track-field.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Track & Field</a>
+              <a href="groups/road-running.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Road Running</a>
+              <a href="groups/cross-country.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Cross Country</a>
+            </div>
+          </div>
+
+          <a href="records.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Records</a>
+          <a href="events.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Events</a>
+          <a href="coaches.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Coaches</a>
+          <a href="kit.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Kit</a>
+          <a href="contact.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Contact</a>
+        </nav>
+
+        <!-- CTA + Mobile Menu Button -->
+        <div class="flex items-center space-x-4">
+          <a href="membership.html" class="hidden sm:inline-flex items-center px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-violet-500/25">
+            Join Now
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden overflow-y-auto">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center space-x-3">
+          <img src="images/Logo-Purple-1024x978.png" alt="Dacorum AC" class="h-10 w-auto">
+          <span class="font-bold text-gray-900">Menu</span>
+        </div>
+        <button id="mobile-menu-close" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="space-y-1">
+        <a href="index.html" class="block px-4 py-3 text-violet-600 font-medium bg-violet-50 rounded-lg">Home</a>
+        <a href="about.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">About Us</a>
+
+        <!-- Groups Dropdown -->
+        <div>
+          <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">
+            Groups
+            <svg class="dropdown-icon w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="hidden pl-4 space-y-1 mt-1">
+            <a href="groups/track-field.html" class="block px-4 py-2 text-sm text-gray-600 hover:text-violet-600">Track & Field</a>
+            <a href="groups/road-running.html" class="block px-4 py-2 text-sm text-gray-600 hover:text-violet-600">Road Running</a>
+            <a href="groups/cross-country.html" class="block px-4 py-2 text-sm text-gray-600 hover:text-violet-600">Cross Country</a>
+          </div>
+        </div>
+
+        <a href="records.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Club Records</a>
+        <a href="events.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Events</a>
+        <a href="coaches.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Coaches</a>
+        <a href="kit.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Club Kit</a>
+        <a href="contact.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg">Contact</a>
+      </nav>
+
+      <div class="mt-8 pt-8 border-t">
+        <a href="membership.html" class="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-white text-center font-semibold rounded-full transition-colors">
+          Join the Club
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-violet-600 via-indigo-600 to-purple-700"></div>
+
+    <!-- Abstract shapes -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur rounded-full text-white/90 text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
+            Established 1995
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+            From Social Runner to
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-200">International Athlete</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
+            Join Dacorum's premier athletics club. Whether you're taking your first steps or chasing championship glory, we're here for every stride of your journey.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="membership.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-violet-700 font-bold rounded-full hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+              Start Your Journey
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="about.html" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="relative hidden lg:block">
+          <div class="aspect-square rounded-3xl bg-white/10 backdrop-blur-sm overflow-hidden">
+            <img src="images/banner.JPEG" alt="Dacorum AC athletes in action" class="w-full h-full object-cover">
+          </div>
+
+          <!-- Floating Stats Card -->
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-6 w-64">
+            <div class="flex items-center space-x-4">
+              <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center">
+                <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-2xl font-bold text-gray-900">World Records</p>
+                <p class="text-sm text-gray-500">Sarah Roberts W75</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="relative -mt-16 z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-extrabold text-violet-600 stat-number" data-counter="300" data-suffix="+">0+</div>
+            <p class="text-gray-600 mt-2 font-medium">Active Members</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-extrabold text-violet-600 stat-number" data-counter="31">0</div>
+            <p class="text-gray-600 mt-2 font-medium">Qualified Coaches</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-extrabold text-violet-600 stat-number" data-counter="5">0</div>
+            <p class="text-gray-600 mt-2 font-medium">Ex-Internationals</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-extrabold text-violet-600 stat-number" data-counter="30" data-suffix="+">0+</div>
+            <p class="text-gray-600 mt-2 font-medium">Years of Excellence</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Our Programs</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Something for Everyone</h2>
+        <p class="text-lg text-gray-600">From beginner to elite, youth to masters, we have a program that's perfect for you.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Track & Field -->
+        <div class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+          <div class="h-48 relative overflow-hidden">
+            <img src="images/menssprintteam.JPEG" alt="Track & Field at Dacorum AC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-violet-900/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-white text-sm font-medium">U11 - Masters</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-violet-600 transition-colors">Track & Field</h3>
+            <p class="text-gray-600 mb-4">Sprints, hurdles, jumps, throws, and multi-events. Compete in Youth Development League and EYAL.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-violet-50 text-violet-600 text-xs font-medium rounded">Sprints</span>
+              <span class="px-2 py-1 bg-violet-50 text-violet-600 text-xs font-medium rounded">Jumps</span>
+              <span class="px-2 py-1 bg-violet-50 text-violet-600 text-xs font-medium rounded">Throws</span>
+              <span class="px-2 py-1 bg-violet-50 text-violet-600 text-xs font-medium rounded">Middle Distance</span>
+            </div>
+            <a href="groups/track-field.html" class="inline-flex items-center text-violet-600 font-semibold hover:text-violet-700">
+              Learn more
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Road Running -->
+        <div class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+          <div class="h-48 relative overflow-hidden">
+            <img src="images/IMG_5436.JPEG" alt="Road Running at Dacorum AC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-white text-sm font-medium">All Abilities</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">Road Running</h3>
+            <p class="text-gray-600 mb-4">From Couch to 5K to marathon training. Join our friendly group runs and local race events.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-emerald-50 text-emerald-600 text-xs font-medium rounded">5K</span>
+              <span class="px-2 py-1 bg-emerald-50 text-emerald-600 text-xs font-medium rounded">10K</span>
+              <span class="px-2 py-1 bg-emerald-50 text-emerald-600 text-xs font-medium rounded">Half Marathon</span>
+              <span class="px-2 py-1 bg-emerald-50 text-emerald-600 text-xs font-medium rounded">Marathon</span>
+            </div>
+            <a href="groups/road-running.html" class="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700">
+              Learn more
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cross Country -->
+        <div class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+          <div class="h-48 relative overflow-hidden">
+            <img src="images/boycrosscountry.JPEG" alt="Cross Country at Dacorum AC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-white text-sm font-medium">Winter Season</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">Cross Country</h3>
+            <p class="text-gray-600 mb-4">Compete in league and championship events throughout the winter season across varied terrain.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-amber-50 text-amber-600 text-xs font-medium rounded">League Races</span>
+              <span class="px-2 py-1 bg-amber-50 text-amber-600 text-xs font-medium rounded">County Champs</span>
+              <span class="px-2 py-1 bg-amber-50 text-amber-600 text-xs font-medium rounded">Relays</span>
+            </div>
+            <a href="groups/cross-country.html" class="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700">
+              Learn more
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-12">
+        <div data-animate>
+          <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Latest News</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Club Updates</h2>
+        </div>
+        <a href="about.html#news" class="mt-4 sm:mt-0 inline-flex items-center text-violet-600 font-semibold hover:text-violet-700">
+          View all news
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- News Card 1 -->
+        <article class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+          <div class="h-96 relative overflow-hidden">
+            <img src="images/hertfordshireschoolssuccess.JPEG" alt="Hertfordshire Schools Success" class="w-full h-full object-cover object-center">
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full">Achievement</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <time datetime="2025-12-15">December 15, 2025</time>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-violet-600 transition-colors">
+              Sarah Roberts Breaks Multiple World Records
+            </h3>
+            <p class="text-gray-600 text-sm">Our incredible W75 athlete has set new world records in the 800m, 1500m, and 10,000m distances...</p>
+          </div>
+        </article>
+
+        <!-- News Card 2 -->
+        <article class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+          <div class="h-96 relative overflow-hidden">
+            <img src="images/relay.JPEG" alt="YDL Competition" class="w-full h-full object-cover object-center">
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-violet-600 text-white text-xs font-bold rounded-full">Competition</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <time datetime="2025-12-10">December 10, 2025</time>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-violet-600 transition-colors">
+              YDL Team Secures 3rd Place at Nationals
+            </h3>
+            <p class="text-gray-600 text-sm">Our U17/U20 Youth Development League team delivered outstanding performances to finish 3rd nationally...</p>
+          </div>
+        </article>
+
+        <!-- News Card 3 -->
+        <article class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+          <div class="h-96 relative overflow-hidden">
+            <img src="images/teamgb.JPEG" alt="Club Event" class="w-full h-full object-cover object-center">
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full">Event</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <time datetime="2025-12-01">December 1, 2025</time>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-violet-600 transition-colors">
+              Annual Awards Evening - Save the Date
+            </h3>
+            <p class="text-gray-600 text-sm">Join us to celebrate our athletes' achievements at our annual awards ceremony. Tickets now available...</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Calendar</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
+        <p class="text-lg text-gray-600">Don't miss out on our upcoming competitions, training sessions, and social events.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Event Card 1 -->
+        <div class="flex bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-animate>
+          <div class="w-24 sm:w-32 bg-violet-600 flex flex-col items-center justify-center text-white p-4 flex-shrink-0">
+            <span class="text-3xl sm:text-4xl font-bold">15</span>
+            <span class="text-sm font-medium">JAN</span>
+            <span class="text-xs opacity-80">2026</span>
+          </div>
+          <div class="flex-1 p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded">Cross Country</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Hertfordshire County Championships</h3>
+            <p class="text-gray-600 text-sm mb-3">Annual county championships across all age groups. A great opportunity to compete for county honours.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              Cassiobury Park, Watford
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="flex bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-animate>
+          <div class="w-24 sm:w-32 bg-emerald-600 flex flex-col items-center justify-center text-white p-4 flex-shrink-0">
+            <span class="text-3xl sm:text-4xl font-bold">22</span>
+            <span class="text-sm font-medium">JAN</span>
+            <span class="text-xs opacity-80">2026</span>
+          </div>
+          <div class="flex-1 p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded">Social</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">New Members Welcome Evening</h3>
+            <p class="text-gray-600 text-sm mb-3">An informal evening to welcome new members, meet the coaches, and learn about our training programs.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              Clubhouse, Jarman Park
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="flex bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-animate>
+          <div class="w-24 sm:w-32 bg-indigo-600 flex flex-col items-center justify-center text-white p-4 flex-shrink-0">
+            <span class="text-3xl sm:text-4xl font-bold">05</span>
+            <span class="text-sm font-medium">FEB</span>
+            <span class="text-xs opacity-80">2026</span>
+          </div>
+          <div class="flex-1 p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded">Track & Field</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Indoor Open Meeting</h3>
+            <p class="text-gray-600 text-sm mb-3">Indoor competition featuring sprints, middle distance, and field events. Open to all ages and abilities.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              Lee Valley Athletics Centre
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 4 -->
+        <div class="flex bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-animate>
+          <div class="w-24 sm:w-32 bg-amber-600 flex flex-col items-center justify-center text-white p-4 flex-shrink-0">
+            <span class="text-3xl sm:text-4xl font-bold">28</span>
+            <span class="text-sm font-medium">FEB</span>
+            <span class="text-xs opacity-80">2026</span>
+          </div>
+          <div class="flex-1 p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded">Awards</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Annual Awards Ceremony 2025</h3>
+            <p class="text-gray-600 text-sm mb-3">Celebrate our athletes' achievements at our prestigious annual awards evening. Formal dress code.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              The Pavilion, Hemel Hempstead
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="events.html" class="inline-flex items-center px-6 py-3 border-2 border-violet-600 text-violet-600 font-semibold rounded-full hover:bg-violet-600 hover:text-white transition-all">
+          View Full Calendar
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Expert Guidance</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Meet Our Coaches</h2>
+        <p class="text-lg text-gray-600">Learn from experienced coaches, including 5 former international athletes, dedicated to helping you reach your potential.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Coach Card 1 -->
+        <div class="text-center group" data-animate>
+          <div class="relative w-32 h-32 mx-auto mb-4">
+            <div class="w-full h-full bg-gradient-to-br from-violet-100 to-indigo-100 rounded-full flex items-center justify-center">
+              <svg class="w-16 h-16 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+            <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-gray-900 group-hover:text-violet-600 transition-colors">Deborah Keenleyside</h3>
+          <p class="text-sm text-gray-500 mb-2">Head Coach</p>
+          <p class="text-xs text-violet-600 font-medium">UKA Level 4</p>
+        </div>
+
+        <!-- Coach Card 2 -->
+        <div class="text-center group" data-animate>
+          <div class="relative w-32 h-32 mx-auto mb-4">
+            <div class="w-full h-full bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full flex items-center justify-center">
+              <svg class="w-16 h-16 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">Mike Dunphy</h3>
+          <p class="text-sm text-gray-500 mb-2">Middle Distance Coach</p>
+          <p class="text-xs text-emerald-600 font-medium">UKA Level 3</p>
+        </div>
+
+        <!-- Coach Card 3 -->
+        <div class="text-center group" data-animate>
+          <div class="relative w-32 h-32 mx-auto mb-4">
+            <div class="w-full h-full bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center">
+              <svg class="w-16 h-16 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-gray-900 group-hover:text-amber-600 transition-colors">Trevor Ratcliffe</h3>
+          <p class="text-sm text-gray-500 mb-2">Throws Coach</p>
+          <p class="text-xs text-amber-600 font-medium">UKA Level 3</p>
+        </div>
+
+        <!-- Coach Card 4 -->
+        <div class="text-center group" data-animate>
+          <div class="relative w-32 h-32 mx-auto mb-4">
+            <div class="w-full h-full bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center">
+              <svg class="w-16 h-16 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">Andy Jackson</h3>
+          <p class="text-sm text-gray-500 mb-2">Pole Vault Coach</p>
+          <p class="text-xs text-indigo-600 font-medium">UKA Level 3</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="coaches.html" class="inline-flex items-center px-6 py-3 bg-violet-600 text-white font-semibold rounded-full hover:bg-violet-700 transition-all hover:shadow-lg hover:shadow-violet-500/25">
+          Meet All 31 Coaches
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24 bg-gradient-to-br from-violet-600 via-indigo-600 to-purple-700 relative overflow-hidden">
+    <!-- Background decorations -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-16" data-animate>
+        <span class="inline-block px-4 py-1 bg-white/10 text-white text-sm font-semibold rounded-full mb-4">Testimonials</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">What Our Members Say</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8 testimonial-card" data-animate>
+          <p class="text-white/90 mb-6">"Joining Dacorum AC was the best decision I made. The coaches are incredibly supportive, and I've seen my times improve dramatically. The community here is like a second family."</p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+              <span class="text-white font-bold">JS</span>
+            </div>
+            <div>
+              <p class="text-white font-semibold">James Stevens</p>
+              <p class="text-white/60 text-sm">U20 800m Runner</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8 testimonial-card" data-animate>
+          <p class="text-white/90 mb-6">"I started with Couch to 5K three years ago and just completed my first marathon! The road running group is so welcoming and the training plans are tailored to every level."</p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+              <span class="text-white font-bold">EW</span>
+            </div>
+            <div>
+              <p class="text-white font-semibold">Emma Williams</p>
+              <p class="text-white/60 text-sm">Road Runner</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8 testimonial-card" data-animate>
+          <p class="text-white/90 mb-6">"My daughter has thrived at Dacorum AC. The junior programme is exceptional - professional coaching in a fun, encouraging environment. She's now competing at county level!"</p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+              <span class="text-white font-bold">DP</span>
+            </div>
+            <div>
+              <p class="text-white font-semibold">David Patel</p>
+              <p class="text-white/60 text-sm">Parent</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-16 text-center relative overflow-hidden" data-animate>
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-violet-600/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-amber-500/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+
+        <div class="relative">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            Ready to Start Your<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-amber-400">Athletics Journey?</span>
+          </h2>
+          <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            Whether you're a complete beginner or an experienced athlete, there's a place for you at Dacorum AC. Join our community today.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="membership.html" class="inline-flex items-center justify-center px-8 py-4 bg-violet-600 text-white font-bold rounded-full hover:bg-violet-700 transition-all shadow-xl hover:shadow-2xl hover:shadow-violet-500/25">
+              Join the Club
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- About -->
+        <div>
+          <div class="flex items-center space-x-3 mb-6">
+            <img src="images/Logo-Purple-1024x978.png" alt="Dacorum AC" class="h-12 w-auto">
+            <div>
+              <h3 class="text-lg font-bold">Dacorum AC</h3>
+              <p class="text-xs text-gray-400">Athletics Club</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-6">From social runner to international athlete. Serving Hemel Hempstead and the Dacorum area since 1995.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-violet-600 transition-colors" aria-label="Facebook">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-violet-600 transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2.16c3.2,0,3.58,0,4.85.07,3.25.15,4.77,1.69,4.92,4.92.06,1.27.07,1.65.07,4.85s0,3.58-.07,4.85c-.15,3.23-1.66,4.77-4.92,4.92-1.27.06-1.65.07-4.85.07s-3.58,0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85C2.38,3.92,3.9,2.38,7.15,2.23,8.42,2.18,8.8,2.16,12,2.16ZM12,0C8.74,0,8.33,0,7.05.07c-4.27.2-6.78,2.71-7,7C0,8.33,0,8.74,0,12s0,3.67.07,4.95c.2,4.27,2.71,6.78,7,7C8.33,24,8.74,24,12,24s3.67,0,4.95-.07c4.27-.2,6.78-2.71,7-7C24,15.67,24,15.26,24,12s0-3.67-.07-4.95c-.2-4.27-2.71-6.78-7-7C15.67,0,15.26,0,12,0Zm0,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.41,4.15a1.44,1.44,0,1,0,1.44,1.44A1.44,1.44,0,0,0,18.41,4.15Z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-violet-600 transition-colors" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-violet-600 transition-colors" aria-label="Flickr">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M5.334 6.666C2.3884 6.666 0 9.055 0 12c0 2.9456 2.3884 5.334 5.334 5.334 2.946 0 5.332-2.3884 5.332-5.334 0-2.945-2.386-5.334-5.332-5.334zm13.332 0c-2.946 0-5.332 2.389-5.332 5.334 0 2.9456 2.386 5.334 5.332 5.334C21.612 17.334 24 14.9456 24 12c0-2.945-2.388-5.334-5.334-5.334z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="membership.html" class="text-gray-400 hover:text-white transition-colors">Membership</a></li>
+            <li><a href="coaches.html" class="text-gray-400 hover:text-white transition-colors">Our Coaches</a></li>
+            <li><a href="records.html" class="text-gray-400 hover:text-white transition-colors">Club Records</a></li>
+            <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Programs -->
+        <div>
+          <h4 class="text-lg font-bold mb-6">Programs</h4>
+          <ul class="space-y-3">
+            <li><a href="groups/track-field.html" class="text-gray-400 hover:text-white transition-colors">Track & Field</a></li>
+            <li><a href="groups/road-running.html" class="text-gray-400 hover:text-white transition-colors">Road Running</a></li>
+            <li><a href="groups/cross-country.html" class="text-gray-400 hover:text-white transition-colors">Cross Country</a></li>
+            <li><a href="kit.html" class="text-gray-400 hover:text-white transition-colors">Club Kit</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-bold mb-6">Contact</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mr-3 mt-0.5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <a href="mailto:hello@dacorumac.org.uk" class="hover:text-white transition-colors">hello@dacorumac.org.uk</a>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mr-3 mt-0.5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>Jarman Park Athletics Track<br>Hemel Hempstead, HP2</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Affiliations -->
+      <div class="border-t border-gray-800 pt-8 pb-4">
+        <div class="flex flex-wrap justify-center gap-8 text-gray-500 text-sm">
+          <span>Affiliated with England Athletics</span>
+          <span>|</span>
+          <span>Member of Hertfordshire County AA</span>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+        <p>&copy; 2026 Dacorum Athletics Club. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
