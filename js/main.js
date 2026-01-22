@@ -69,11 +69,11 @@ function initStickyHeader() {
 
     if (currentScroll > 50) {
       header.classList.add('shadow-lg');
-      header.classList.remove('bg-transparent');
+      header.classList.remove('bg-white/95');
       header.classList.add('glass');
     } else {
       header.classList.remove('shadow-lg');
-      header.classList.add('bg-transparent');
+      header.classList.add('bg-white/95');
       header.classList.remove('glass');
     }
 
