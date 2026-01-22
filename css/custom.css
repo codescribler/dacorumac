@@ -109,7 +109,7 @@ html {
 
 /* Title Styling */
 .title-gradient {
-  background: linear-gradient(to right, #ffffff 0%, #e2e8f0 50%, #ffffff 100%);
+  background: linear-gradient(to right, #F59E0B 0%, #FCD34D 50%, #F59E0B 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
