@@ -1,6 +1,6 @@
 // Dacorum Athletics Club - Main JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Mobile Menu Toggle
   initMobileMenu();
 
@@ -81,17 +81,28 @@ function initStickyHeader() {
   });
 }
 
-// Dropdown Menus for Mobile
+// Dropdown Menus for Mobile & Desktop focus fix
 function initDropdowns() {
-  const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
-
-  dropdownBtns.forEach(btn => {
+  // Mobile toggle
+  const mobileBtns = document.querySelectorAll('.mobile-dropdown-btn');
+  mobileBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const content = btn.nextElementSibling;
       const icon = btn.querySelector('.dropdown-icon');
-
       content.classList.toggle('hidden');
       icon?.classList.toggle('rotate-180');
+    });
+  });
+
+  // Desktop click-to-blur fix (prevents sticking after click)
+  const desktopBtns = document.querySelectorAll('.dropdown > button');
+  desktopBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.blur();
+    });
+    // Also handle mouseleave to be safe
+    btn.parentElement.addEventListener('mouseleave', () => {
+      btn.blur();
     });
   });
 }
