@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +33,11 @@
   <link rel="stylesheet" href="css/custom.css">
   <link rel="icon" type="image/png" href="images/Logo-Purple-1024x978.png">
 </head>
+
 <body class="font-sans text-gray-800 antialiased">
 
   <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 shadow-sm">
+  <header id="header" class="header-floating transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center space-x-3">
@@ -47,35 +49,46 @@
         </a>
 
         <nav class="hidden lg:flex items-center space-x-1">
-          <a href="index.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Home</a>
-          <a href="about.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">About</a>
+          <a href="index.html"
+            class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Home</a>
+          <a href="about.html"
+            class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">About</a>
           <div class="relative dropdown">
-            <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors flex items-center">
+            <button
+              class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors flex items-center">
               Groups
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <div class="dropdown-menu absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 mt-1">
-              <a href="groups/track-field.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Track & Field</a>
-              <a href="groups/road-running.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Road Running</a>
-              <a href="groups/cross-country.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Cross Country</a>
+              <a href="groups/track-field.html"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Track & Field</a>
+              <a href="groups/road-running.html"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Road Running</a>
+              <a href="groups/cross-country.html"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-violet-50 hover:text-violet-600">Cross Country</a>
             </div>
           </div>
-          <a href="records.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Records</a>
+          <a href="records.html"
+            class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Records</a>
           <a href="events.html" class="px-4 py-2 text-sm font-medium text-violet-600">Events</a>
-          <a href="coaches.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Coaches</a>
-          <a href="kit.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Kit</a>
-          <a href="contact.html" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Contact</a>
+          <a href="coaches.html"
+            class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Coaches</a>
+          <a href="kit.html"
+            class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Kit</a>
+          <a href="contact.html"
+            class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-violet-600 transition-colors">Contact</a>
         </nav>
 
         <div class="flex items-center space-x-4">
-          <a href="membership.html" class="hidden sm:inline-flex items-center px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full transition-all">
+          <a href="membership.html"
+            class="hidden sm:inline-flex items-center px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-full transition-all">
             Join Now
           </a>
           <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Open menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
@@ -85,7 +98,8 @@
 
   <!-- Mobile Menu -->
   <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
-  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden overflow-y-auto">
+  <div id="mobile-menu"
+    class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl lg:hidden overflow-y-auto">
     <div class="p-6">
       <div class="flex items-center justify-between mb-8">
         <div class="flex items-center space-x-3">
@@ -94,7 +108,7 @@
         </div>
         <button id="mobile-menu-close" class="p-2 hover:bg-gray-100 rounded-lg" aria-label="Close menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -118,7 +132,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center">
         <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Events & Calendar</h1>
-        <p class="text-xl text-white/80 max-w-2xl mx-auto">Competitions, social events, and training sessions throughout the year.</p>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">Competitions, social events, and training sessions throughout
+          the year.</p>
       </div>
     </div>
   </section>
@@ -138,7 +153,8 @@
   <section class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Calendar</span>
+        <span
+          class="inline-block px-4 py-1 bg-violet-100 text-violet-700 text-sm font-semibold rounded-full mb-4">Calendar</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
         <p class="text-lg text-gray-600">Mark your diary for these key dates in the Dacorum AC calendar.</p>
       </div>
@@ -148,13 +164,13 @@
         <div class="flex items-center justify-between mb-8">
           <button class="p-2 hover:bg-gray-100 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <h3 class="text-2xl font-bold text-gray-900">January 2026</h3>
           <button class="p-2 hover:bg-gray-100 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
@@ -231,7 +247,8 @@
             <p class="text-gray-600 text-sm mb-3">Cross country championships across all age groups.</p>
             <div class="flex items-center text-sm text-gray-500">
               <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               </svg>
               Cassiobury Park, Watford
             </div>
@@ -249,7 +266,8 @@
             <p class="text-gray-600 text-sm mb-3">Meet the coaches and fellow members in a relaxed setting.</p>
             <div class="flex items-center text-sm text-gray-500">
               <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               </svg>
               Clubhouse, Jarman Park
             </div>
@@ -267,7 +285,8 @@
             <p class="text-gray-600 text-sm mb-3">Indoor competition for all ages and abilities.</p>
             <div class="flex items-center text-sm text-gray-500">
               <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               </svg>
               Lee Valley Athletics Centre
             </div>
@@ -285,7 +304,8 @@
             <p class="text-gray-600 text-sm mb-3">Celebrating our athletes' achievements. Formal dress.</p>
             <div class="flex items-center text-sm text-gray-500">
               <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               </svg>
               The Pavilion, Hemel Hempstead
             </div>
@@ -339,4 +359,5 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
