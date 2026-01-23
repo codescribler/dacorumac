@@ -44,7 +44,7 @@
 <body class="font-sans text-gray-800 antialiased">
 
   <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
+  <header id="header" class="header-floating transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
 
@@ -194,26 +194,24 @@
             Established 1995
           </div>
 
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+          <h1 class="text-hero-main text-white mb-6">
             From Social Runner to
             <span class="title-gradient block sm:inline">International Athlete</span>
           </h1>
 
-          <p class="text-lg sm:text-2xl text-white mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          <p class="text-hero-sub text-white/90 mb-10 max-w-2xl mx-auto lg:mx-0">
             Join Dacorum's premier athletics club. Whether you're taking your first steps or chasing championship glory,
             we're here for every stride of your journey.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="membership.html"
-              class="btn-premium inline-flex items-center justify-center px-8 py-4 bg-white text-violet-700 font-bold rounded-full transition-all shadow-xl">
+          <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+            <a href="membership.html" class="btn-premium btn-premium-primary">
               Start Your Journey
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <a href="about.html"
-              class="btn-premium inline-flex items-center justify-center px-8 py-4 glass-premium text-white font-semibold rounded-full transition-all">
+            <a href="about.html" class="btn-premium btn-premium-secondary glass-premium">
               Explore Programs
             </a>
           </div>
@@ -232,7 +230,7 @@
 
             <!-- Floating Achievement Card (Outside of clipping container) -->
             <div
-              class="absolute -top-4 -right-4 sm:top-auto sm:right-auto sm:-bottom-6 sm:-left-6 glass-card rounded-2xl p-4 w-[180px] sm:w-[260px] z-30 shadow-2xl">
+              class="absolute -top-4 -right-4 sm:top-auto sm:right-auto sm:-bottom-6 sm:-left-6 glass-card-premium rounded-2xl p-4 w-[180px] sm:w-[260px] z-30 shadow-2xl">
               <div class="flex items-center space-x-3">
                 <div
                   class="w-10 sm:w-12 h-10 sm:h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -265,7 +263,7 @@
   <!-- Stats Section -->
   <section class="relative -mt-16 z-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12">
+      <div class="glass-card-premium p-8 lg:p-12">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 divide-x divide-gray-100">
           <div class="text-center">
             <div class="text-4xl lg:text-5xl font-black text-violet-700">300+</div>
@@ -301,7 +299,7 @@
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Track & Field -->
-        <div class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+        <div class="group glass-card-premium overflow-hidden" data-animate>
           <div class="h-48 relative overflow-hidden">
             <img src="images/menssprintteam.JPEG" alt="Track & Field at Dacorum AC"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
@@ -334,7 +332,7 @@
         </div>
 
         <!-- Road Running -->
-        <div class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+        <div class="group glass-card-premium overflow-hidden" data-animate>
           <div class="h-48 relative overflow-hidden">
             <img src="images/IMG_5436.JPEG" alt="Road Running at Dacorum AC"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
@@ -367,7 +365,7 @@
         </div>
 
         <!-- Cross Country -->
-        <div class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+        <div class="group glass-card-premium overflow-hidden" data-animate>
           <div class="h-48 relative overflow-hidden">
             <img src="images/boycrosscountry.JPEG" alt="Cross Country at Dacorum AC"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
@@ -422,7 +420,7 @@
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- News Card 1 -->
-        <article class="group card-hover bg-white rounded-2xl shadow-lg overflow-hidden" data-animate>
+        <article class="group glass-card-premium overflow-hidden" data-animate>
           <div class="h-96 relative overflow-hidden">
             <img src="images/hertfordshireschoolssuccess.JPEG" alt="Hertfordshire Schools Success"
               class="w-full h-full object-cover object-center">

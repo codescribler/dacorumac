@@ -68,13 +68,9 @@ function initStickyHeader() {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > 50) {
-      header.classList.add('shadow-lg');
-      header.classList.remove('bg-white/95');
-      header.classList.add('glass');
+      header.classList.add('header-scrolled');
     } else {
-      header.classList.remove('shadow-lg');
-      header.classList.add('bg-white/95');
-      header.classList.remove('glass');
+      header.classList.remove('header-scrolled');
     }
 
     lastScroll = currentScroll;
